@@ -1,5 +1,4 @@
 <!--
-
     Copyright (C) 2010 the original author or authors.
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,24 +12,27 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
 -->
 
 <module>
+    <inherits name='com.google.gwt.core.Core' />
     <inherits name='com.google.gwt.user.User' />
+    <inherits name='com.google.gwt.json.JSON' />
+    <inherits name='com.google.gwt.jsonp.Jsonp' />
+    <inherits name='com.google.gwt.xml.XML' />
+    <inherits name="org.fusesource.restygwt.RestyGWT" />
     <inherits name='com.google.gwt.logging.Logging'/>
-    <inherits name='org.fusesource.restygwt.RestyGWT'/>
 
     <!-- Logging Configuration -->
     <set-property name="gwt.logging.enabled" value="TRUE"/>
-    <set-property name="gwt.logging.logLevel" value="ALL"/>
-
-    <source path='client'/>
-    <source path='example/client'/>
-
-    <servlet path='/api/*' class='org.fusesource.restygwt.server.CachingTestServlet' />
-    <servlet path='/testing/caching_and_block' class='org.fusesource.restygwt.server.event.EchoServlet' />
-    <servlet path='/testing/caching_and_queuing' class='org.fusesource.restygwt.server.event.EchoServlet' />
+    <set-property name="gwt.logging.logLevel" value="INFO"/>
+    <set-property name="gwt.logging.consoleHandler" value="ENABLED" />
+    <set-property name="gwt.logging.developmentModeHandler" value="ENABLED" />
+    <set-property name="gwt.logging.firebugHandler" value="DISABLED" />
+    <set-property name="gwt.logging.hasWidgetsHandler" value="DISABLED" />
+    <set-property name="gwt.logging.popupHandler" value="DISABLED" />
+    <set-property name="gwt.logging.systemHandler" value="ENABLED" />
+    <set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED" />
 
     <!-- seen at http://code.google.com/p/google-web-toolkit/source/browse/trunk/user/src/com/google/gwt/junit/JUnit.gwt.xml?r=5779 -->
     <inherits name="com.google.gwt.benchmarks.Benchmarks"/>
@@ -45,4 +47,9 @@
 
     <set-configuration-property name="org.fusesource.restygwt.annotationresolver"
             value="org.fusesource.restygwt.rebind.ModelChangeAnnotationResolver"/>
+
+    <servlet path='/foo/*' class='org.fusesource.restygwt.server.event.EchoServlet' />
+
+    <source path='client'/>
+    <source path='example/client'/>
 </module>

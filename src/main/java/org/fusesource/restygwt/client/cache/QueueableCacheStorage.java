@@ -15,23 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.fusesource.restygwt.client;
 
-import com.google.gwt.http.client.Request;
-import com.google.gwt.http.client.RequestBuilder;
-import com.google.gwt.http.client.RequestException;
+package org.fusesource.restygwt.client.cache;
+
+import java.util.List;
+
+import com.google.gwt.http.client.RequestCallback;
+import com.google.gwt.http.client.Response;
 
 /**
+ * more enhanced cacheinterface, TODO write something
  *
- * Do the dispatch.
- * Check out default implementation DispatcherDefault.
- *
- * @author <a href="mailto:mail@raphaelbauer.com">rEyez</<a>
- * @author <a href="http://hiramchirino.com">Hiram Chirino</a>
- *
+ * @author abalke
  */
-public interface Dispatcher {
+public interface QueueableCacheStorage extends CacheStorage<Response> {
 
-    public Request send(Method method, RequestBuilder builder) throws RequestException;
+    public boolean hasCallback(final CacheKey k);
 
+    public void addCallback(final CacheKey k, final RequestCallback rc);
+
+    public List<RequestCallback> removeCallbacks(final CacheKey k);
 }

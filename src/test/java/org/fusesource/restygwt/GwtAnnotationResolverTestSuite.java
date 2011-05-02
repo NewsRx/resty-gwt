@@ -15,23 +15,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.fusesource.restygwt.client;
 
-import com.google.gwt.http.client.Request;
-import com.google.gwt.http.client.RequestBuilder;
-import com.google.gwt.http.client.RequestException;
+package org.fusesource.restygwt;
+
+import junit.framework.Test;
+import junit.framework.TestCase;
+
+import org.fusesource.restygwt.client.event.ModelChangeAnnotationTestGwt;
+import org.fusesource.restygwt.rebind.AnnotationResolver;
+
+import com.google.gwt.junit.tools.GWTTestSuite;
+
 
 /**
+ * separate testsuite for tests where {@link AnnotationResolver}s are added to restygwt
  *
- * Do the dispatch.
- * Check out default implementation DispatcherDefault.
- *
- * @author <a href="mailto:mail@raphaelbauer.com">rEyez</<a>
- * @author <a href="http://hiramchirino.com">Hiram Chirino</a>
- *
+ * @author <a href="mailto:andi.balke@gmail.com">andi</<a>
  */
-public interface Dispatcher {
+public class GwtAnnotationResolverTestSuite extends TestCase {
 
-    public Request send(Method method, RequestBuilder builder) throws RequestException;
 
+    /**
+     * @return the suite of that module
+     */
+    public static Test suite() {
+        GWTTestSuite suite = new GWTTestSuite("AnnotationResolver GwtTestCases" );
+
+        suite.addTestSuite(ModelChangeAnnotationTestGwt.class);
+
+        return suite;
+    }
 }

@@ -15,23 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.fusesource.restygwt.client;
 
-import com.google.gwt.http.client.Request;
-import com.google.gwt.http.client.RequestBuilder;
-import com.google.gwt.http.client.RequestException;
+package org.fusesource.restygwt.example.client.event;
+
+import com.google.gwt.event.shared.EventHandler;
 
 /**
+ * example eventhandler interface
  *
- * Do the dispatch.
- * Check out default implementation DispatcherDefault.
+ * taken from http://stackoverflow.com/questions/2951621/gwt-custom-events/2967359#2967359
  *
- * @author <a href="mailto:mail@raphaelbauer.com">rEyez</<a>
- * @author <a href="http://hiramchirino.com">Hiram Chirino</a>
- *
+ * @author <a href="mailto:andi.balke@gmail.com">andi</<a>
  */
-public interface Dispatcher {
-
-    public Request send(Method method, RequestBuilder builder) throws RequestException;
-
+public interface ModelChangedEventHandler extends EventHandler {
+    void onModelChange(ModelChangeEvent event);
 }
