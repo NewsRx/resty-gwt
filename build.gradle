@@ -5,21 +5,37 @@
  */
 
 plugins {
-//    id "org.docstr.gwt"
+    id "org.docstr.gwt"
     id 'java-library'
 }
 
+repositories {
+    mavenCentral()
+    google()
+    maven { url 'https://packages.jetbrains.team/maven/p/ij/intellij-dependencies/' }
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://github.com/psiegman/mvn-repo/raw/master/releases' }
+}
+
+gwt {
+    gwtVersion = '2.12.2'
+    modules = ['org.fusesource.restygwt.RestyGWT']
+    //jvmArgs '-Xmx2048m'
+}
 dependencies {
-    api 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
-    api 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
-    api 'com.github.nmorel.gwtjackson:gwt-jackson:0.15.4'
-    testImplementation 'junit:junit:4.8.1'
-    testImplementation 'org.easymock:easymock:3.0'
-    testImplementation 'org.jboss.resteasy:resteasy-jaxrs:3.0.24.Final'
-    testImplementation 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.6'
-    compileOnly 'javax.ws.rs:javax.ws.rs-api:2.0.1'
-    compileOnly 'com.google.gwt:gwt-user:2.7.0'
-    compileOnly 'com.google.gwt:gwt-dev:2.7.0'
+    compileOnly("org.gwtproject:gwt-user:2.12.2")
+    compileOnly("org.gwtproject:gwt-dev:2.12.2")
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.1.0'
+//    compileOnly 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+    compileOnly 'jakarta.ws.rs:jakarta.ws.rs-api:4.0.0'
+    compileOnly 'com.fasterxml.jackson.core:jackson-annotations:2.8.11'
+    compileOnly 'com.fasterxml.jackson.core:jackson-databind:2.8.11'
+    compileOnly project(':gwt-jackson:gwt-jackson')
+    compileOnly 'javax.xml.bind:jaxb-api:2.3.1'
+//    testImplementation 'junit:junit:4.8.1'
+//    testImplementation 'org.easymock:easymock:3.0'
+//    testImplementation 'org.jboss.resteasy:resteasy-jaxrs:3.0.24.Final'
+//    testImplementation 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.6'
 }
 
 description = 'restygwt'

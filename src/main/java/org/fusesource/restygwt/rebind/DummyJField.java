@@ -1,10 +1,6 @@
 package org.fusesource.restygwt.rebind;
 
-import com.google.gwt.core.ext.typeinfo.JClassType;
-import com.google.gwt.core.ext.typeinfo.JEnumConstant;
-import com.google.gwt.core.ext.typeinfo.JField;
-import com.google.gwt.core.ext.typeinfo.JMethod;
-import com.google.gwt.core.ext.typeinfo.JType;
+import com.google.gwt.core.ext.typeinfo.*;
 
 import java.lang.annotation.Annotation;
 import java.util.HashMap;
@@ -45,15 +41,15 @@ class DummyJField implements JField {
         return annotations.containsKey(annotationClass);
     }
 
-    @Override
-    public String[][] getMetaData(String tagName) {
-        return null;
-    }
-
-    @Override
-    public String[] getMetaDataTags() {
-        return null;
-    }
+    //    @Override
+    //    public String[][] getMetaData(String tagName) {
+    //        return null;
+    //    }
+    //
+    //    @Override
+    //    public String[] getMetaDataTags() {
+    //        return null;
+    //    }
 
     @Override
     public JClassType getEnclosingType() {
