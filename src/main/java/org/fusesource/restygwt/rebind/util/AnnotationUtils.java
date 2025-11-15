@@ -102,7 +102,7 @@ public class AnnotationUtils {
         List<Annotation> result = new ArrayList<Annotation>();
         for (Annotation annotation : annotations) {
             String name = annotation.annotationType().getCanonicalName();
-            if (name.startsWith("javax.ws.rs") || name.startsWith("org.fusesource.restygwt.client")) {
+            if (name.startsWith("jakarta.ws.rs") || name.startsWith("org.fusesource.restygwt.client")) {
                 result.add(annotation);
             }
         }

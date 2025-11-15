@@ -9,6 +9,22 @@ plugins {
     id 'java-library'
 }
 
+java.sourceCompatibility = JavaLanguageVersion.of(17)
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+java.withSourcesJar()
+sourcesJar {
+    from(sourceSets.main.allSource)
+    from(tasks.named("compileJava").map { it.outputs.files })
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+jar {
+    from sourceSets.main.allSource // include sources for use by gwt
+    from(tasks.named("compileJava").map { it.outputs.files })
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+sourcesJar.dependsOn compileJava
+processResources.dependsOn compileJava
+
 repositories {
     mavenCentral()
     google()
@@ -20,22 +36,21 @@ repositories {
 gwt {
     gwtVersion = '2.12.2'
     modules = ['org.fusesource.restygwt.RestyGWT']
-    //jvmArgs '-Xmx2048m'
 }
+
 dependencies {
     compileOnly("org.gwtproject:gwt-user:2.12.2")
     compileOnly("org.gwtproject:gwt-dev:2.12.2")
     compileOnly 'jakarta.servlet:jakarta.servlet-api:6.1.0'
-//    compileOnly 'javax.ws.rs:javax.ws.rs-api:2.0.1'
     compileOnly 'jakarta.ws.rs:jakarta.ws.rs-api:4.0.0'
     compileOnly 'com.fasterxml.jackson.core:jackson-annotations:2.8.11'
     compileOnly 'com.fasterxml.jackson.core:jackson-databind:2.8.11'
-    compileOnly project(':gwt-jackson:gwt-jackson')
-    compileOnly 'javax.xml.bind:jaxb-api:2.3.1'
+    api project(':gwt-jackson')
+    compileOnly 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.4'
 //    testImplementation 'junit:junit:4.8.1'
 //    testImplementation 'org.easymock:easymock:3.0'
 //    testImplementation 'org.jboss.resteasy:resteasy-jaxrs:3.0.24.Final'
-//    testImplementation 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.6'
+//    testImplementation 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.11'
 }
 
 description = 'restygwt'

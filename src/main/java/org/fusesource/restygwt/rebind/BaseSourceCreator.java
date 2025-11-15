@@ -30,10 +30,10 @@ import com.google.gwt.user.rebind.AbstractSourceCreator;
 import com.google.gwt.user.rebind.ClassSourceFileComposerFactory;
 import com.google.gwt.user.rebind.SourceWriter;
 
-import static org.fusesource.restygwt.rebind.util.ClassSourceFileComposerFactoryImportUtil.addFuseSourceStaticImports;
-
 import java.io.PrintWriter;
 import java.util.HashSet;
+
+import static org.fusesource.restygwt.rebind.util.ClassSourceFileComposerFactoryImportUtil.addFuseSourceStaticImports;
 
 /**
  * provides additional helper methods for generating source..
@@ -180,7 +180,7 @@ public abstract class BaseSourceCreator extends AbstractSourceCreator {
      * @return
      */
     private String getOpenPackageName(String name) {
-        if (name.startsWith("java.") || name.startsWith("javax.")) {
+        if (name.startsWith("java.") || name.startsWith("jakarta.")) {
             name = "open." + name;
         }
         return name;

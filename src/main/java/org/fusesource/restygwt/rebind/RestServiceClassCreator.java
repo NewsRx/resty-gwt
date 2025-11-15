@@ -18,19 +18,35 @@
 
 package org.fusesource.restygwt.rebind;
 
-import com.google.gwt.core.client.*;
+import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArray;
+import com.google.gwt.core.client.JsArrayBoolean;
+import com.google.gwt.core.client.JsArrayInteger;
+import com.google.gwt.core.client.JsArrayNumber;
+import com.google.gwt.core.client.JsArrayString;
 import com.google.gwt.core.ext.GeneratorContext;
 import com.google.gwt.core.ext.TreeLogger;
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.*;
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestException;
-import com.google.gwt.json.client.*;
+import com.google.gwt.json.client.JSONArray;
+import com.google.gwt.json.client.JSONObject;
+import com.google.gwt.json.client.JSONParser;
+import com.google.gwt.json.client.JSONString;
+import com.google.gwt.json.client.JSONValue;
 import com.google.gwt.jsonp.client.JsonpRequest;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 import com.google.gwt.user.rebind.ClassSourceFileComposerFactory;
 import com.google.gwt.xml.client.Document;
-import jakarta.ws.rs.*;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.FormParam;
+import jakarta.ws.rs.HeaderParam;
+import jakarta.ws.rs.HttpMethod;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import org.fusesource.restygwt.client.*;
 import org.fusesource.restygwt.client.Json.Style;
@@ -989,7 +1005,7 @@ public class RestServiceClassCreator extends BaseSourceCreator {
             restMethod = method.getName();
             if (!REST_METHODS.contains(restMethod)) {
                 getLogger().log(ERROR,
-                    "Invalid rest method. It must either have a lower case rest method name or have a javax rs method" +
+                        "Invalid rest method. It must either have a lower case rest method name or have a jakarta rs method" +
                         " annotation: " + method.getReadableDeclaration());
                 throw new UnableToCompleteException();
             }
