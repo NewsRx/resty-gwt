@@ -289,3 +289,5 @@ gwt-unitCache
 /src/test.x/java/org/fusesource/restygwt/StringEncoderDecoderTestGwt.gwt.xml
 /src/test.x/java/org/fusesource/restygwt/TimeoutTestGwt.gwt.xml
 /src/test.x/java/org/fusesource/restygwt/VolatileQueueableCacheStorageTestGwt.gwt.xml
+/build/libs/resty-gwt.jar
+/build/
