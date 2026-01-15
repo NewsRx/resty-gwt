@@ -8,6 +8,10 @@
 - **IDE**: Primarily IntelliJ IDEA or PyCharm.
 - **Project Structure**: Multi-module Gradle project with Python integration.
 
+13. **Long-term Goals**:
+   - **GWT**: Transition all remaining JSNI code to JSINTEROPT.
+   - **REST API**: Switch from Jersey to Spring Boot for all RESTful services.
+
 ### AI Assistance Guidelines
 1. **Consistency**: Follow the existing coding style and patterns in the project. Use the same naming conventions (PascalCase for Java classes, snake_case for Python functions/variables).
 2. **Technology Specifics**:

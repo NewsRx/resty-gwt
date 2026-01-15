@@ -16,6 +16,10 @@ This document contains the guidelines and instructions for AI agents working on 
 - **IDE**: Primarily IntelliJ IDEA or PyCharm.
 - **Project Structure**: Multi-module Gradle project with Python integration.
 
+### Long-term Goals
+- **GWT**: Transition all remaining JSNI code to JSINTEROPT.
+- **REST API**: Switch from Jersey to Spring Boot for all RESTful services.
+
 ### AI Assistance Guidelines
 
 #### 1. Consistency
