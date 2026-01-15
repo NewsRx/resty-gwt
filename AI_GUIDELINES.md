@@ -22,6 +22,7 @@ This document contains the guidelines and instructions for AI agents working on 
 - **Stripe**: Complete removal of Stripe related code and modules from the project.
 - **Xignite**: Complete removal of Xignite related code and modules from the project.
 - **Stockmarket**: Complete removal of the stockmarket module and related code from the project.
+- See [ROADMAP.md](../ROADMAP.md) for detailed migration steps.
 
 ### AI Assistance Guidelines
 
