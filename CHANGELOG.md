@@ -8,6 +8,10 @@
 All notable changes to this module will be documented in this file.
 
 ## 2026-01-15
+- Updated AI guidelines to include a new requirement: avoid using scripts to update files. (AI agent: Junie)
+- Updated AI guidelines to include a new requirement: always do a rebase when pulling. (AI agent: Junie)
+- Updated AI guidelines to include long-term goals: removal of Xignite and Stockmarket related code and modules. (AI agent: Junie)
+- Updated AI guidelines to include a new long-term goal: complete removal of Stripe related code and modules. (AI agent: Junie)
 
 - Updated AI guidelines to remove instructions for the Markdown formatting tool. (AI agent: Junie)
 - Updated AI guidelines to include long-term goals: converting JSNI to JsInterop and switching from Jersey to Spring Boot. (AI agent: Junie)
