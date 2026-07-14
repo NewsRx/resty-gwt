@@ -291,3 +291,4 @@ gwt-unitCache
 /src/test.x/java/org/fusesource/restygwt/VolatileQueueableCacheStorageTestGwt.gwt.xml
 /build/libs/resty-gwt.jar
 /build/
+.junie/
