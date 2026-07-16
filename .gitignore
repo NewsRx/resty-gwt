@@ -292,3 +292,4 @@ gwt-unitCache
 /build/libs/resty-gwt.jar
 /build/
 .junie/
+.issues/
